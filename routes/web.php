@@ -35,3 +35,4 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/dosen/create', [DosenController::class, 'create']);
+Route::post('/dosen/store', [DosenController::class, 'store']);

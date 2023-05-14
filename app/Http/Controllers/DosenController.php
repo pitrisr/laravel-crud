@@ -36,7 +36,25 @@ class DosenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'gender' => 'required',
+            'address' => 'required',
+            'educationlevel' => 'required',
+            'phone' => 'required',
+            'email' => 'required'
+        ]);
+
+        Dosen::create([
+            'name' => $request->name,
+            'gender' => $request->gender,
+            'address' => $request->address,
+            'edducationlevel' => $request->educationlevel,
+            'phone' => $request->nphoneame,
+            'email' => $request->email
+        ]);
+        return redirect('/dosen');
+
     }
 
     /**

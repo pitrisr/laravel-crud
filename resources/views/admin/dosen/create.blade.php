@@ -3,53 +3,44 @@
 @section('content')
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Different Styles</h3>
+            <h3 class="card-title">Add Dosen</h3>
         </div>
         <!-- /.card-header -->
-        <div class="card-body">
-            <h4>Input</h4>
-            <div class="form-group">
-                <label for="exampleInputBorder">Bottom Border only <code>.form-control-border</code></label>
-                <input type="text" class="form-control form-control-border" id="exampleInputBorder"
-                    placeholder=".form-control-border">
+        <!-- form start -->
+        <form action="{{ url('/dosen/store') }}" method="POST">
+            {{ csrf_field() }}
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="name">Input Nama</label>
+                    <input type="text" class="form-control" placeholder="Enter Nama">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Jenis Kelamin</label>
+                    <input type="text" class="form-control" placeholder="Ex: Perempuan">
+                </div>
+                <div class="form-group">
+                    <label for="address">Alamat</label>
+                    <textarea name="address" id="floatingTextArea" class="form-control" placeholder="Enter Alamat"></textarea>>
+                </div>
+                <div class="form-group">
+                    <label for="educationlevel">Pendidikan</label>
+                    <input type="text" class="form-control" placeholder="Ex: Strata 2">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telepon</label>
+                    <input type="number" class="form-control" placeholder="Ex: 081123456789">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1"
+                        placeholder="cont: example@gmail.com">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputBorderWidth2">Bottom Border only 2px Border
-                    <code>.form-control-border.border-width-2</code></label>
-                <input type="text" class="form-control form-control-border border-width-2" id="exampleInputBorderWidth2"
-                    placeholder=".form-control-border.border-width-2">
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-            <div class="form-group">
-                <label for="exampleInputRounded0">Flat <code>.rounded-0</code></label>
-                <input type="text" class="form-control rounded-0" id="exampleInputRounded0" placeholder=".rounded-0">
-            </div>
-            <h4>Custom Select</h4>
-            <div class="form-group">
-                <label for="exampleSelectBorder">Bottom Border only <code>.form-control-border</code></label>
-                <select class="custom-select form-control-border" id="exampleSelectBorder">
-                    <option>Value 1</option>
-                    <option>Value 2</option>
-                    <option>Value 3</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleSelectBorderWidth2">Bottom Border only
-                    <code>.form-control-border.border-width-2</code></label>
-                <select class="custom-select form-control-border border-width-2" id="exampleSelectBorderWidth2">
-                    <option>Value 1</option>
-                    <option>Value 2</option>
-                    <option>Value 3</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleSelectRounded0">Flat <code>.rounded-0</code></label>
-                <select class="custom-select rounded-0" id="exampleSelectRounded0">
-                    <option>Value 1</option>
-                    <option>Value 2</option>
-                    <option>Value 3</option>
-                </select>
-            </div>
-        </div>
-        <!-- /.card-body -->
+        </form>
     </div>
 @endsection
