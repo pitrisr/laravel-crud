@@ -116,4 +116,16 @@ class DosenController extends Controller
 
         return redirect()->back();
     }
+
+    public function search(Request $request)
+    {
+        if ($request->has('search')) {
+            $dosen = Dosen::where('name', 'LIKE', '%' . $request->search . '%')->get();
+
+        } else {
+            $dosen = Dosen::all();
+        }
+
+        return view('admin.dosen.index', ['dosen' => $dosen]);
+    }
 }
