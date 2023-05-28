@@ -76,7 +76,8 @@ class DosenController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dosen = Dosen::find($id);
+        return view('admin.dosen.edit', ['dosen' => $dosen]);
     }
 
     /**
@@ -88,17 +89,31 @@ class DosenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'gender' => 'required',
+            'address' => 'required',
+            'educationlevel' => 'required',
+            'phone' => 'required',
+            'email' => 'required'
+        ]);
+        $dosen = Dosen::find($id);
+        $dosen->update($request->all());
+
+        return redirect('/dosen');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *  @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $dosen = Dosen::find($id);
+        $dosen->delete();
+
+        return redirect()->back();
     }
 }

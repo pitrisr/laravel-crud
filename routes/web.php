@@ -36,3 +36,6 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
 
 Route::get('/dosen/create', [DosenController::class, 'create']);
 Route::post('/dosen/store', [DosenController::class, 'store']);
+Route::get('/dosen/{id}/edit', [DosenController::class, 'edit']);
+Route::post('/dosen/{id}/update', [DosenController::class, 'update']);
+Route::get('/dosen/{id}/delete', [DosenController::class, 'destroy']);
