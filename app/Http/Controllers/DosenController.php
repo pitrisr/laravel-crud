@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dosen;
+use App\Models\Matkul;
 
 class DosenController extends Controller
 {
@@ -128,4 +129,11 @@ class DosenController extends Controller
 
         return view('admin.dosen.index', ['dosen' => $dosen]);
     }
+
+    public function matkul()
+    {
+        $matkul = Matkul::all();
+        return view('admin.dosen.matkul', ['matkul' => $matkul]);
+    }
+
 }

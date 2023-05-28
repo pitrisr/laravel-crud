@@ -41,3 +41,7 @@ Route::post('/dosen/{id}/update', [DosenController::class, 'update']);
 Route::get('/dosen/{id}/delete', [DosenController::class, 'destroy']);
 
 Route::get('/dosen/search', [DosenController::class, 'search']);
+
+Route::get('dosen/matkul', [DosenController::class, 'matkul']);
+
+Route::get('/dosen/mahasiswa', [MahasiswaController::class, 'mahasiswa']);
